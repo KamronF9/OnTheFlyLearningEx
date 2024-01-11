@@ -22,10 +22,6 @@ export SLURM_CPU_BIND="cores"
 export JDFTX_MEMPOOL_SIZE=8192
 
 
-# same as above but in interactive:
-# salloc --nodes 1 --qos interactive --time 01:00:00 --constraint gpu --gpus 4 --account=m4025_g -n 4 --ntasks-per-node=4 #SBATCH --gpus-per-task=1
-# srun jdftx_gpu -i md.in | tee md.test
-# srun jdftx_gpu -ni md.in | tee md.dryRun
 
 srun jdftx_gpu -i md.in -o ${1}_${2}.jdftxout
 
